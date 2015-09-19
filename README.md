@@ -9,16 +9,11 @@ Docker instance.
 
 # Instructions
 
-Before doing any of this stuff, pull down this repo.
-
 ## Platform-specific setup
 
-### AWS
-
-Create an Amazon Linux AMI. I suggest the t2.small at a minimum. I saw a "server running behind" message the first
-time I logged in, but not after that. If you want to not risk that, go with a t2.medium. Then pull down this repo.
-
 ### Docker
+
+Pull down this repo as you'll need it to build your Docker images.
 
 I'm assuming you have Docker installed and running. If not, do that first and get docker-machine started. Then:
 
@@ -36,3 +31,17 @@ Or if you want to make some mods before you start it, drop into the bash shell f
 Or how about if you want the server local on your filesystem so you can fiddle with settings without dropping into
 the server at all? **NOTE: this will make mods to your local filesystem in the same repo directory as you're sitting now...**
 
+### AWS or other local Linux system
+
+If you're building on AWS, I suggest the t2.small at a minimum. I saw a "server running behind" message the first
+time I logged in, but not after that. If you want to not risk that, go with a t2.medium.
+
+If using a local Linux image, you're ready to go.
+
+Now pull down this repo.
+
+Run:
+
+    ./buildMinecraftServer.sh && ./runMinecraftServer.sh
+
+That's it!
