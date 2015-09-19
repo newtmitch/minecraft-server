@@ -9,4 +9,4 @@ EXPOSE 25565
 ADD . /minecraft
 WORKDIR /minecraft
 
-CMD bash
+CMD ./buildMinecraftServer.sh && ./runMinecraftServer.sh

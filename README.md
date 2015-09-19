@@ -1,2 +1,38 @@
 # minecraft-server
 Some basic tools and stuff to quickly get minecraft running on a linux server
+
+# Overview
+
+This repo is to provide a couple of convenient scripts to get a minecraft server running in
+one place or another. This is useful for an AWS instance of Minecraft as well as a local
+Docker instance.
+
+# Instructions
+
+Before doing any of this stuff, pull down this repo.
+
+## Platform-specific setup
+
+### AWS
+
+Create an Amazon Linux AMI. I suggest the t2.small at a minimum. I saw a "server running behind" message the first
+time I logged in, but not after that. If you want to not risk that, go with a t2.medium. Then pull down this repo.
+
+### Docker
+
+I'm assuming you have Docker installed and running. If not, do that first and get docker-machine started. Then:
+
+    docker build -t mitch/mc .
+
+It'll do some magic on a CentOS instance (instead of Ubuntu as this mimics the Amazon Linux AMI more closely), then
+create a container with that image:
+
+    docker run -ti -p 25565:25565 mitch/mc
+
+Or if you want to make some mods before you start it, drop into the bash shell first.
+
+    docker run -ti -p 25565:25565 mitch/mc bash
+
+Or how about if you want the server local on your filesystem so you can fiddle with settings without dropping into
+the server at all? **NOTE: this will make mods to your local filesystem in the same repo directory as you're sitting now...**
+
