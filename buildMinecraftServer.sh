@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the Minecraft Jar URL if not otherwise set
-: ${MINECRAFT_JAR_URL:=1.8.8/minecraft_server.1.8.8.jar}
+: ${MINECRAFT_JAR_URL:=1.8.9/minecraft_server.1.8.9.jar}
 
 mkdir minecraft-server
 
@@ -16,6 +16,11 @@ if [ -n "$MINECRAFT_SERVER_PROPERTIES" ]; then
 fi
 
 cd minecraft-server
+
+# Remove any existing jar files
+rm *.jar
+
+#Download the new jar file
 wget https://s3.amazonaws.com/Minecraft.Download/versions/$MINECRAFT_JAR_URL
 
 echo "eula=true" > eula.txt
