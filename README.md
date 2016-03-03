@@ -45,3 +45,5 @@ Run:
     ./buildMinecraftServer.sh && ./runMinecraftServer.sh
 
 That's it!
+
+# rsm test only
