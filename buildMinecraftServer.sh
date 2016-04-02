@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the Minecraft Jar URL if not otherwise set
-: ${MINECRAFT_JAR_URL:=1.9/minecraft_server.1.9.jar}
+: ${MINECRAFT_JAR_URL:=1.9.2/minecraft_server.1.9.2.jar}
 
 mkdir minecraft-server
 
