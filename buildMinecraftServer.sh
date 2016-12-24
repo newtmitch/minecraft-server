@@ -22,7 +22,7 @@ fi
 cd $MCDIR
 
 # Remove any existing jar files
-rm *.jar
+rm -f *.jar
 
 #Download the new jar file
 wget https://s3.amazonaws.com/Minecraft.Download/versions/$MINECRAFT_VERSION/minecraft_server.$MINECRAFT_VERSION.jar
