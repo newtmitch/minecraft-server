@@ -53,3 +53,8 @@ That's it!
 ### Sync AWS backups to local directory
 
     rsync -avz --progress -e 'ssh -i ~/.ssh/mykey.pem' ec2-user@superawesomeip:/home/ec2-user/backups-minecraft/* .
+
+### noip configuration for AWS
+
+To set up the noip configuration for a specific server, run `noip -C` and follow the prompts to update the
+configuration.
