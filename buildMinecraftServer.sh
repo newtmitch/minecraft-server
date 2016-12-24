@@ -4,7 +4,7 @@
 : ${MINECRAFT_VERSION:=1.11.2}
 
 # Set the default directory if no parameter given
-MCDIR=${1:-minecraft}
+MCDIR=${1:-minecraft-server}
 
 # Make two minecraft server directories - a single server can run multiple servers
 mkdir $MCDIR
