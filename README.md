@@ -28,6 +28,10 @@ Or if you want to make some mods before you start it, drop into the bash shell f
 
     docker run -ti -p 25565:25565 mitch/mc bash
 
+Or for two servers simultaneously:
+
+    docker run -ti -p 25565:25565 -p 25566:25566 mitch/mc bash
+
 Or how about if you want the server local on your filesystem so you can fiddle with settings without dropping into
 the server at all? **NOTE: this will make mods to your local filesystem in the same repo directory as you're sitting now...**
 
