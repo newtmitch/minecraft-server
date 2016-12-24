@@ -50,4 +50,6 @@ Run:
 
 That's it!
 
-# rsm test only
+### Sync AWS backups to local directory
+
+    rsync -avz --progress -e 'ssh -i ~/.ssh/mykey.pem' ec2-user@superawesomeip:/home/ec2-user/backups-minecraft/* .

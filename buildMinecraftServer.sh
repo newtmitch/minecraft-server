@@ -21,10 +21,10 @@ fi
 
 cd $MCDIR
 
-# Remove any existing jar files
-rm -f *.jar
+# Remove any existing server jar files
+rm -f minecraft_server.jar
 
 #Download the new jar file
-wget https://s3.amazonaws.com/Minecraft.Download/versions/$MINECRAFT_VERSION/minecraft_server.$MINECRAFT_VERSION.jar
+wget -O minecraft_server.jar https://s3.amazonaws.com/Minecraft.Download/versions/$MINECRAFT_VERSION/minecraft_server.$MINECRAFT_VERSION.jar
 
 echo "eula=true" > eula.txt
