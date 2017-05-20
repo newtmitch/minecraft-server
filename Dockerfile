@@ -10,6 +10,6 @@ EXPOSE 25565
 ADD . /minecraft
 WORKDIR /minecraft
 
-ENV MINECRAFT_JAR_URL=1.11.1/minecraft_server.1.11.1.jar
+ENV MINECRAFT_JAR_URL=1.11.2/minecraft_server.1.11.2.jar
 
 CMD ./buildMinecraftServer.sh && ./runMinecraftServer.sh
