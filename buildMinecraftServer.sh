@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the Minecraft Jar URL if not otherwise set
-: ${MINECRAFT_VERSION:=1.11.2}
+: ${MINECRAFT_VERSION:=1.12}
 
 # Set the default directory if no parameter given
 MCDIR=${1:-minecraft-server}
