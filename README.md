@@ -50,11 +50,33 @@ Run:
 
 That's it!
 
-### Sync AWS backups to local directory
+#### Set up services to start on boot
+
+If you want to set up your server to start minecraft automatically on boot, put the following in
+`/etc/rc.d/rc.local`:
+```
+sudo su - ec2-user -c '/usr/bin/tmux new -s mc1 -d "/home/ec2-user/runMinecraftServer.sh minecraft-server" \; set -t mc1 remain-on-exit on'
+```
+
+Note that you'll want to have tmux installed to get this going: `yum install -y tmux`
+
+Do that so you can log in if you need to and attach to the session and see the output or otherwise
+interact with it while it's running: `tmux a -t mc1`. If you want to run multiple servers, run
+the build script multiple times after renaming the `minecraft-server` directory each time, then
+add multiple lines to `rc.local` for each directory reference. Make sure to run each of them once
+before you do that so you can modify the port setting in `server.properties` for each of the
+minecraft server directories.
+
+This is a cool way to have the minecraft start automatically when the AWS instance does, and when
+set up with something like AWS Lambda allows you to easily start those remotely using whatever 
+approach you'd like...
+
+#### Sync AWS backups to local directory
 
     rsync -avz --progress -e 'ssh -i ~/.ssh/mykey.pem' ec2-user@superawesomeip:/home/ec2-user/backups-minecraft/* .
 
-### noip configuration for AWS
+#### noip configuration for AWS
 
 To set up the noip configuration for a specific server, run `noip -C` and follow the prompts to update the
 configuration.
+
