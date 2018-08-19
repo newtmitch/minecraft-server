@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Set the Minecraft Jar URL if not otherwise set
-: ${MINECRAFT_VERSION:=1.12.2}
-
 # Set the default directory if no parameter given
 MCDIR=${1:-minecraft-server}
+
+# Set the server download url if no other url given
+: ${MC_DOWNLOAD_URL:=https://launcher.mojang.com/mc/game/1.13/server/d0caafb8438ebd206f99930cfaecfa6c9a13dca0/server.jar}
 
 # Make two minecraft server directories - a single server can run multiple servers
 mkdir $MCDIR
@@ -24,7 +24,9 @@ cd $MCDIR
 # Remove any existing server jar files
 rm -f minecraft_server.jar
 
-#Download the new jar file
-wget -O minecraft_server.jar https://s3.amazonaws.com/Minecraft.Download/versions/$MINECRAFT_VERSION/minecraft_server.$MINECRAFT_VERSION.jar
+# Download the new jar file - this is a specific link that might not work more than once,
+# and definitely can't be used across versions due to the hashed path (weenies). Go to the
+# following link to get the latest URL: https://minecraft.net/en-us/download/server
+wget -O minecraft_server.jar $MC_DOWNLOAD_URL
 
 echo "eula=true" > eula.txt
