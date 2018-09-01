@@ -12,6 +12,6 @@ WORKDIR /minecraft
 RUN ./buildMinecraftServer.sh
 
 RUN mkdir ./minecraft-server/world
-VOLUME /minecraft/minecraft-server-world
+VOLUME /minecraft/minecraft-server/world
 
 CMD echo starting minecraft server... && ./runMinecraftServer.sh
