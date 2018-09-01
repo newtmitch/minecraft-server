@@ -4,8 +4,7 @@ Some basic tools and stuff to quickly get minecraft running on a linux server
 
 # Overview
 
-This repo is to provide a couple of convenient scripts to get a minecraft server running in one place or another. This is useful for an AWS instance of Minecraft as well as a local
-Docker instance.
+This repo is to provide a couple of convenient scripts to get a minecraft server running in one place or another. This is useful for an AWS instance of Minecraft as well as a local Docker instance.
 
 # Instructions
 
