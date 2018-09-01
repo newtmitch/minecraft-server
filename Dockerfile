@@ -9,7 +9,9 @@ EXPOSE 25565
 # VOLUME /minecraft
 ADD . /minecraft
 WORKDIR /minecraft
+RUN ./buildMinecraftServer.sh
 
-ENV MINECRAFT_JAR_URL=1.12/minecraft_server.1.12.jar
+RUN mkdir ./minecraft-server/world
+VOLUME /minecraft/minecraft-server-world
 
-CMD ./buildMinecraftServer.sh && ./runMinecraftServer.sh
+CMD echo starting minecraft server... && ./runMinecraftServer.sh

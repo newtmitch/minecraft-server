@@ -4,7 +4,7 @@
 MCDIR=${1:-minecraft-server}
 
 # Set the server download url if no other url given
-: ${MC_DOWNLOAD_URL:=https://launcher.mojang.com/mc/game/1.13/server/d0caafb8438ebd206f99930cfaecfa6c9a13dca0/server.jar}
+: ${MC_DOWNLOAD_URL:=https://launcher.mojang.com/v1/objects/fe123682e9cb30031eae351764f653500b7396c9/server.jar}
 
 # Make two minecraft server directories - a single server can run multiple servers
 mkdir $MCDIR
